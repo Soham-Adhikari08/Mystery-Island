@@ -103,10 +103,10 @@ The project is modularized into the following files to separate game logic and p
 
 ## Team Members & Contributions
 
-* **\[Student 1 Name\]** - Game Manager / Integrator (Created main.py, game loop, menus, and location locks)
+* **\[Soham Adhikari\]** - Game Manager / Integrator (Created main.py, game loop, menus, and location locks)
 
-* **\[Student 2 Name\]** - Adventure Designer (Created locations.py, location text, events)
+* **\[Md Ahin Khan\]** - Adventure Designer (Created locations.py, location text, events)
 
-* **\[Student 3 Name\]** - Puzzle Developer (Created puzzles.py, riddles, answer checks)
+* **\[Manthika Banerjee\]** - Puzzle Developer (Created puzzles.py, riddles, answer checks)
 
-* **\[Student 4 Name\]** - Game Mechanics Developer (Created player.py, inventory.py, scoring.py, and win/lose condition checks)
+* **\[Soumyajit Mitra\]** - Game Mechanics Developer (Created player.py, inventory.py, scoring.py, and win/lose condition checks)
