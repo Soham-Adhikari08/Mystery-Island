@@ -100,13 +100,3 @@ The project is modularized into the following files to separate game logic and p
 * **inventory.py**: Manages adding items to the inventory list and preventing duplicates.
 
 * **scoring.py**: Updates points and calculates the final win/lose state based on health and items.
-
-## Team Members & Contributions
-
-* **\[Soham Adhikari\]** - Game Manager / Integrator (Created main.py, game loop, menus, and location locks)
-
-* **\[Md Ahin Khan\]** - Adventure Designer (Created locations.py, location text, events)
-
-* **\[Manthika Banerjee\]** - Puzzle Developer (Created puzzles.py, riddles, answer checks)
-
-* **\[Soumyajit Mitra\]** - Game Mechanics Developer (Created player.py, inventory.py, scoring.py, and win/lose condition checks)
