@@ -1,7 +1,7 @@
 import puzzles
 import inventory
 import scoring
-
+import player
 def explore_dark_forest(health, score, inv):
     print("\n=== 1. DARK FOREST ===")
     print("The trees are thick and block out the sun. A mysterious voice whispers a riddle...")
@@ -18,7 +18,7 @@ def explore_dark_forest(health, score, inv):
         inventory.add_item(inv, "Map Fragment")
     else:
         print("WRONG ANSWER! The forest spirits attack you.")
-        health = scoring.lose_life(health)
+        health = player.lose_life(health)
         
     return health, score
 
@@ -38,7 +38,7 @@ def explore_crystal_cave(health, score, inv):
         inventory.add_item(inv, "Ancient Key")
     else:
         print("WRONG ANSWER! You slip and fall on the sharp crystals.")
-        health = scoring.lose_life(health)
+        health = player.lose_life(health)
         
     return health, score
 
@@ -58,7 +58,7 @@ def explore_abandoned_ship(health, score, inv):
         inventory.add_item(inv, "Treasure Clue")
     else:
         print("WRONG ANSWER! A ghost pirate scares you away.")
-        health = scoring.lose_life(health)
+        health = player.lose_life(health)
         
     return health, score
 
@@ -78,7 +78,7 @@ def explore_ancient_temple(health, score, inv):
         inventory.add_item(inv, "Temple Coordinates")
     else:
         print("WRONG ANSWER! A trap triggers and hits you.")
-        health = scoring.lose_life(health)
+        health = player.lose_life(health)
         
     return health, score
 
@@ -105,7 +105,7 @@ def explore_treasure_chamber(health, score, inv):
             return True, health, score
         else:
             print("WRONG PASSWORD! The chamber shakes violently!")
-            health = scoring.lose_life(health)
+            health = player.lose_life(health)
             return False, health, score
     else:
         print("The door is locked tight.")

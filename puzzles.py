@@ -36,39 +36,43 @@ def get_puzzle(location_name):
     """
     return PUZZLES.get(location_name, None)
 
-def ask_puzzle(location_name):
-    """
-    Presents the riddle for the given location to the player.
-    Allows the player to request a hint or attempt to solve it.
-    Returns True if solved correctly, False otherwise.
-    """
-    puzzle = get_puzzle(location_name)
-    
-    if not puzzle:
-        print(f"\n[!] No puzzle found for {location_name}.")
-        return True
 
-    print(f"\n--- PUZZLE: {location_name.upper()} ---")
-    print(puzzle["riddle"])
-    
-    attempts = 2  # Gives the player a chance to use a hint or retry
-    
+def ask_puzzle(question, options, correct_answer, hint):
+
+    print("\n--- PUZZLE ---")
+    print(question)
+
+    for option in options:
+        print(option)
+
+    attempts = 2
+
     while attempts > 0:
-        user_input = input("\nYour Answer (type 'hint' for a clue): ").strip().lower()
-        
-        if user_input == "hint":
-            print(f"\n💡 Hint: {puzzle['hint']}")
+
+        answer = input("\nYour answer (or type 'hint'): ").strip().lower()
+
+        if answer == "hint":
+            print("\nHint:", hint)
             continue
-            
-        # Check if the user's cleaned input matches the correct answer
-        if user_input == puzzle["answer"]:
-            print("\n✨ Correct! You solved the puzzle!")
+
+        # Accept either the option number or answer text
+        if answer == str(correct_answer):
+            print("\nCorrect! You solved the puzzle!")
             return True
+
+        # Also accept the actual answer text
+        correct_option = options[correct_answer - 1]
+        correct_text = correct_option.split(". ", 1)[-1].lower()
+
+        if answer == correct_text:
+            print("\nCorrect! You solved the puzzle!")
+            return True
+
+        attempts -= 1
+
+        if attempts > 0:
+            print("Incorrect! Try again.")
         else:
-            attempts -= 1
-            if attempts > 0:
-                print(f"\n❌ Incorrect! You have {attempts} attempt(s) left. Try again.")
-            else:
-                print(f"\n❌ Incorrect! You failed the puzzle.")
-                
+            print("You failed the puzzle.")
+
     return False

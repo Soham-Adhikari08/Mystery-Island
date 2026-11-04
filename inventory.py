@@ -1,5 +1,7 @@
 # inventory.py
 # Adds, removes and displays collected items
+def has_item(inventory_list, item_name):
+    return item_name in inventory_list
 
 def add_item(inventory_list, item_name):
     """Adds a newly found object to the inventory list if it isn't already there."""
